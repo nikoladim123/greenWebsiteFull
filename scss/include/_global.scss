@@ -1,0 +1,142 @@
+@import "_variabale";
+@import "_mixin";
+@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700|Open+Sans:100,300,500,700');
+
+ul{
+	padding: 0;
+	list-style: none;
+	margin-bottom: 0;
+}
+body{
+    font-weight: 500;
+}
+a,
+a:hover,
+a:active,
+a:focus{
+	text-decoration: none;
+}
+@keyframes landarrow {0% {transform:translateY(0%);}50% {transform:translateY(15%);}100% {transform:translateY(0%);}}
+@-moz-keyframes landarrow {0% {-moz-transform:translateY(0%);}50% {-moz-transform:translateY(15%);}100% {-moz-transform:translateY(0%);}}
+@-webkit-keyframes landarrow {0% {-webkit-transform:translateY(0%);}50% {-webkit-transform:translateY(15%);}100% {-webkit-transform:translateY(0%);}}
+.home-overlay{
+    position:absolute;
+    background: rgba($black,0.2);
+    top:0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    z-index: -1;
+}
+.menu-content-social{
+    display: inline-block;
+    li{
+        margin-right: 15px;
+        a{
+            display: block;
+            height: 30px;
+            width: 30px;
+            padding-top: 5px;
+            text-align: center;
+            background: $social-bg;
+            border-radius: 50%;
+            color: $black;
+            transition: all 0.6s ease 0s;
+            &:hover{
+                color: $listing-heading-color;
+            }
+        }
+    }
+}
+.yellow-text{
+    color: $primary-color;
+}
+.landing-animation{
+    animation-name: landarrow;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    text-align: center;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -20px;
+    position: absolute;
+    text-align: center;
+    width: 40px;
+}
+footer{
+    background: $footer-bg;
+    padding-top: 307px;
+    border-top: 4px solid $footer-border;
+}
+.button-wrapper{
+    background: $listing-bg;
+    padding: 20px 10px 125px;
+}
+.btn-custom{
+    width: 100%;
+    max-width: 370px;
+    border: 2px solid $btn-color;
+    padding: 15px 20px;
+    text-align: center;
+    color: $btn-color;
+    background: $black;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    transition: all 0.4s linear 0s;
+    &:hover{
+        background: $btn-color;
+        color: $white;
+        border-color: $btn-color;
+    }
+}
+.black-overlay{
+    background: rgba($black,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.border-div{
+    position: absolute;
+    z-index: 100;
+    &.border-1,
+    &.border-3{
+        height: 52px;
+        left: 0;
+        right: 0;
+        top:0px;
+        @include linear-gradient($gredient-start,darken($gredient-start, 1%));
+        @media screen and (max-width: 768px){
+            height: 45px;
+        }
+    }
+    &.border-2,
+    &.border-4{
+        height: 100%;
+        width: 42px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        @include linear-gradient($gredient-start,$gredient-end);
+        @media screen and (max-width: 768px){
+            width: 15px;
+        }
+    }
+    &.border-3{
+        top: auto;
+        bottom: 0px; 
+        background: lighten($gredient-end, 1%);
+        z-index: 105;
+        @media screen and (max-width: 768px){
+            height: 15px;
+        }
+    }
+    &.border-4{
+        right: auto;
+        left: 0;
+    }
+}

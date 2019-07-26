@@ -1,0 +1,288 @@
+/* Global Css */
+
+@import "include/_global";
+
+/* End Global Css */
+
+
+/* Variable */
+
+@import "include/_variabale";
+
+/* End Variable */
+
+/* Variable */
+
+@import "include/_instagram";
+
+/* End Variable */
+
+/* Mixin */
+
+@import "include/_mixin";
+
+/* End Mixin */
+
+
+/* Header css */
+
+ @import "include/_header";
+
+/* End Header css */
+
+/* Menu css */
+
+@import "include/_menu";
+
+/* End Menu css */
+
+body{
+    font-family: $body-font;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #faf5e8;
+    overflow-y: auto;
+    .vegas-container{
+        position: fixed;
+    }
+}
+html,
+body{
+    height: 100%;
+}
+.landing-area{
+    height: 100%;
+    position:relative;
+}
+.vegas-slide-inner{
+    background-position: center 27% !important;
+}
+.box-area{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-color : transparent;
+    z-index: 99;
+    border: 43px solid #5E4833;
+    overflow: hidden;
+    border-top-width: 53px;
+    border-bottom-width: 53px;
+    @media screen and (max-width: 768px){
+        border-width: 15px;
+        border-top-width: 45px;
+    }
+    @media screen and (max-width: 768px){
+        border-width: 15px;
+        border-top-width: 45px;
+    }
+}
+.comming-event{
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    z-index: 110;
+    a,i{
+        transition: all 0.1s ease 0s;
+        color: $listing-heading-color;
+        &:hover{
+            opacity: 0.7;
+            i{
+                transform: translateX(10px);
+            }
+        }
+    }
+}
+.main-username{
+    text-align: center;
+    bottom: 100px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: opacity 0.7s linear 0s;
+    &.hide-user{
+        opacity: 0;
+    }
+    .landing-heading{
+        font-size: 120px;
+        font-family: $heading-font;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        @media screen and (max-width:1024px){
+            font-size: 62px;
+        }
+        @media screen and (max-width:768px){
+            font-size: 24px;
+        }
+        span{
+            color: $primary-color;
+        }
+    }
+    h6{
+        font-family: $body-font;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: $listing-heading-color;
+        font-size: 20px;
+        @media screen and (max-width:768px){
+            font-size: 16px;
+        }
+    }
+}
+.recent-photo-section{
+    border-top: 75px solid lighten($gredient-end, 1%);
+    padding: 122px 15px 53px;
+    background-color: rgba($black,0.7);
+    h1{
+        text-align: center;
+        font-family: $heading-font;
+        color: $heading-color;
+        font-size: 40px;
+        margin:0px;
+        text-transform: uppercase;
+        @media screen and (max-width:768px){
+            font-size: 20px;
+        }
+    }
+}
+.img-listing-wrapper{
+    background-color: $listing-bg;
+    padding: 50px;
+    @media screen and (max-width:600px){
+        padding: 0px;
+    }
+}
+.img-listing{
+    margin-bottom: 38px;
+    @media screen and (min-width:1024px){
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    @media screen and (max-width:768px){
+        padding: 15px;
+    }
+    &:last-child{
+        margin-bottom: 0px;
+    }
+    &:nth-child(even){
+        .list-img{
+            order: 2;
+            text-align: left;
+        }
+        .list-text-content{
+            @media screen and (min-width:1024px){
+                padding-right: 0px !important;
+                padding-left: 30px !important;
+            }
+        }
+        .list-text{
+            @media screen and (min-width:1024px){
+                border-left: 1px solid $listing-border-color !important;
+                border-right: none !important;
+            }
+            
+        }
+    }
+    .list-img{
+        width: 50%;
+        display: inline-block;
+        text-align: right;
+        position: relative;
+        margin-left: -4px;
+        z-index: 1;
+        @media screen and (min-width:1024px){
+            max-width: 700px;
+            width: 100%;
+        }
+        @media screen and (max-width:768px){
+            width: 100%;
+            text-align: center !important;
+        }   
+        &:hover{
+            .list-overlay:after{
+                opacity: 1;
+                visibility: visible;
+                transform:scale(2) rotate(-45deg) translateZ(0px);
+                transition-duration: 1s;    
+            }
+        }
+        .img-list-content{
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            max-width: 100%;
+        }
+        .list-overlay{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            &:after{
+                background-color: rgba($hover-bg,0.8);
+                content: "";
+                display: block;
+                height: 100%;
+                left: 0;
+                opacity: 0.9;
+                position: absolute;
+                top: 0;
+                transform: scale(2.5) translateX(-100%) translateY(-100%) translateZ(0px) rotate(-45deg);
+                transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+                width: 100%;
+            }
+
+        }
+    }
+    .list-text-wrapper{
+        display: inline-block;
+        width: 50%;
+        margin-left: -4px;
+        vertical-align: middle;
+        @media screen and (min-width:1024px){
+            flex: 1 1 0;
+            padding: 27px 0px;
+        }
+        @media screen and (max-width:768px){
+            width: 100%;
+        }   
+        .list-text-content{
+            background-color: $text-bg;
+            padding: 30px 30px 30px 0px;
+            height: 100%;
+            @media screen and (max-width:768px){
+                padding: 10px;
+            }
+            .list-text{
+                border: 1px solid $listing-border-color;
+                height: 100%;
+                padding: 25px 10px;
+                @media screen and (min-width:769px){
+                    border-left: none;
+                    padding: 50px 37px 10px;
+                }
+                h1{
+                    margin-top: 0px;
+                    margin-bottom: 25px;
+                    color: $listing-heading-color;
+                    margin-left: -4px;
+                    font-weight: 300;
+                    @media screen and (max-width:768px){
+                        font-size: 25px;
+                    }
+                }
+                p{
+                    color: $text-color;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+

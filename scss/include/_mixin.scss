@@ -1,0 +1,31 @@
+@mixin linear-gradient($direction, $color-stops) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin border-linear-gradient($direction, $color-stops) {
+  border-top-image: nth(nth($color-stops, 1), 1);
+  border-top-image: linear-gradient($direction, $color-stops);
+}
+
+
+@mixin content-space{
+	@media screen and (min-width:769px){
+		padding: 0 49px;
+	}
+}
+
+@mixin body-bg{
+	body{
+		overflow: auto;
+		background: url(../images/11972237_l.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+}
+
+@mixin container-bg{
+	background: rgba($white,0.9);
+}

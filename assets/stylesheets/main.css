@@ -1,0 +1,107 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html,body{
+	height: 100%;
+}
+*,
+*:after,
+*:before{
+	box-sizing: border-box;
+}
+.primary-container{
+	background-color: #1c1c1c;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.close{
+	z-index: 100;
+	position: absolute;
+	top:20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: #555;
+	text-align: center;
+	display: table;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+.close:hover{
+	color: white;
+}
+.close p{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 3em;
+	font-weight: bold;
+}
+.slideshow-container{
+	width:999999999px;
+	height: 100%;
+	transition: all 1.5s;
+}
+.slide{
+	float: left;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+.image{
+	min-width: 250px;
+	min-height: 250px;
+	display: inline-block;
+	overflow: hidden;
+}
+.image img{
+	position: relative;
+	transition: left 1.5s;
+}
